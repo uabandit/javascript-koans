@@ -2,13 +2,23 @@
 module("About Asserts (topics/about_asserts.js)");
 
 test("ok", function() {
-    ok(__ === true, 'what will satisfy the ok assertion?');
+    ok(true === true, 'what will satisfy the ok assertion?');
 });
 
 test("not ok", function() {
-    ok(__ === false, 'what is a false value?');
+    ok(false === false, 'what is a false value?');
 });
 
 test("equal", function() {
-    equal(__, 1 + 1, 'what will satisfy the equal assertion?');
+    equal(2, 1 + 1, 'what will satisfy the equal assertion?');
+});
+
+const sum = function(a, b) {
+    return a + b
+}
+
+test("equal", function() {
+    equal(4, sum(2, 2));
+    equal(10, sum(5, 5));
+    equal(11, sum(5, 5));
 });
